@@ -1,0 +1,13 @@
+{
+    "BuildingGroup": {
+        "去皮橡木": {
+            "desc": "stripped_oak_wood",
+            "recipes": [
+                {
+                    "outputQty": 3,
+                    "去皮橡木原木": 4
+                }
+            ]
+        }
+    }
+}

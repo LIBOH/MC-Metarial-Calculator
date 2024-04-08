@@ -1,0 +1,530 @@
+{
+    "RedstoneGroup": {
+        "红石粉": {
+            "desc": "redstone",
+            "recipes": [
+                {
+                    "outputQty": 9,
+                    "红石块": 1
+                }
+            ]
+        },
+        "红石火把": {
+            "desc": "redstone_torch",
+            "recipes": [
+                {
+                    "outputQty": 1,
+                    "红石粉": 1,
+                    "木棍": 1
+                }
+            ]
+        },
+        "红石块": {
+            "desc": "redstone_block",
+            "recipes": [
+                {
+                    "outputQty": 1,
+                    "红石粉": 9
+                }
+            ]
+        },
+        "红石中继器": {
+            "desc": "repeater",
+            "recipes": [
+                {
+                    "outputQty": 1,
+                    "红石粉": 1,
+                    "红石火把": 2,
+                    "石头": 3
+                }
+            ]
+        },
+        "红石比较器": {
+            "desc": "comparator",
+            "recipes": [
+                {
+                    "outputQty": 1,
+                    "石英": 1,
+                    "红石火把": 3,
+                    "石头": 3
+                }
+            ]
+        },
+        "标靶": {
+            "desc": "target",
+            "recipes": [
+                {
+                    "outputQty": 1,
+                    "红石粉": 4,
+                    "干草块": 1
+                }
+            ]
+        },
+        "拉杆": {
+            "desc": "lever",
+            "recipes": [
+                {
+                    "outputQty": 1,
+                    "圆石": 1,
+                    "木棍": 1
+                }
+            ]
+        },
+        "木制压力板": {
+            "desc": "wood_pressure_plate",
+            "recipes": [
+                {
+                    "outputQty": 1,
+                    "木板": 2
+                }
+            ]
+        },
+        "石制压力板": {
+            "desc": "stone_pressure_plate",
+            "recipes": [
+                {
+                    "outputQty": 1,
+                    "石头": 2
+                }
+            ]
+        },
+        "轻质测重压力板": {
+            "desc": "light_weighted_pressure_plate",
+            "recipes": [
+                {
+                    "outputQty": 1,
+                    "金锭": 2
+                }
+            ]
+        },
+        "重质测重压力板": {
+            "desc": "heavy_weighted_pressure_plate",
+            "recipes": [
+                {
+                    "outputQty": 1,
+                    "铁锭": 2
+                }
+            ]
+        },
+        "校频幽匿感测体": {
+            "desc": "calibrated_sculk_sensor",
+            "recipes": [
+                {
+                    "outputQty": 1,
+                    "紫水晶碎片": 3,
+                    "幽匿感测体": 1
+                }
+            ]
+        },
+        "拌线钩": {
+            "desc": "tripwire_hook",
+            "recipes": [
+                {
+                    "outputQty": 2,
+                    "铁锭": 1,
+                    "木棍": 1,
+                    "木板": 1
+                }
+            ]
+        },
+        "讲台": {
+            "desc": "lectern",
+            "recipes": [
+                {
+                    "outputQty": 1,
+                    "木制台阶": 4,
+                    "书架": 1
+                }
+            ]
+        },
+        "阳光探测器": {
+            "desc": "daylight_detector",
+            "recipes": [
+                {
+                    "outputQty": 1,
+                    "玻璃": 3,
+                    "石英": 3,
+                    "木制台阶": 3
+                }
+            ]
+        },
+        "避雷针": {
+            "desc": "lightning_rod",
+            "recipes": [
+                {
+                    "outputQty": 1,
+                    "铜锭": 3
+                }
+            ]
+        },
+        "活塞": {
+            "desc": "piston",
+            "recipes": [
+                {
+                    "outputQty": 1,
+                    "红石粉": 1,
+                    "木板": 3,
+                    "铁锭": 1,
+                    "圆石": 4
+                }
+            ]
+        },
+        "黏性活塞": {
+            "desc": "sticky_piston",
+            "recipes": [
+                {
+                    "outputQty": 1,
+                    "黏液球": 1,
+                    "活塞": 1
+                }
+            ]
+        },
+        "黏液块": {
+            "desc": "slime_block",
+            "recipes": [
+                {
+                    "outputQty": 1,
+                    "黏液球": 9
+                }
+            ]
+        },
+        "蜂蜜块": {
+            "desc": "honey_block",
+            "recipes": [
+                {
+                    "outputQty": 1,
+                    "蜂蜜瓶": 4
+                }
+            ]
+        },
+        "发射器": {
+            "desc": "dispenser",
+            "recipes": [
+                {
+                    "outputQty": 1,
+                    "红石粉": 1,
+                    "弓": 1,
+                    "圆石": 7
+                }
+            ]
+        },
+        "投掷器": {
+            "desc": "dropper",
+            "recipes": [
+                {
+                    "outputQty": 1,
+                    "红石粉": 1,
+                    "圆石": 7
+                }
+            ]
+        },
+        "漏斗": {
+            "desc": "hopper",
+            "recipes": [
+                {
+                    "outputQty": 1,
+                    "铁锭": 5,
+                    "箱子": 1
+                }
+            ]
+        },
+        "箱子": {
+            "desc": "chest",
+            "recipes": [
+                {
+                    "outputQty": 1,
+                    "木板": 8
+                }
+            ]
+        },
+        "木桶": {
+            "desc": "barrel",
+            "recipes": [
+                {
+                    "outputQty": 1,
+                    "木板": 6,
+                    "木制台阶": 2
+                }
+            ]
+        },
+        "雕纹书架": {
+            "desc": "chiseled_bookshelf",
+            "recipes": [
+                {
+                    "outputQty": 1,
+                    "木板": 6,
+                    "木制台阶": 3
+                }
+            ]
+        },
+        "熔炉": {
+            "desc": "furnace",
+            "recipes": [
+                {
+                    "outputQty": 1,
+                    "圆石": 8
+                }
+            ]
+        },
+        "陷阱箱": {
+            "desc": "trapper_chest",
+            "recipes": [
+                {
+                    "outputQty": 1,
+                    "箱子": 1,
+                    "绊线钩": 1
+                }
+            ]
+        },
+        "侦测器": {
+            "desc": "observer",
+            "recipes": [
+                {
+                    "outputQty": 1,
+                    "石英": 1,
+                    "红石粉": 2,
+                    "圆石": 6
+                }
+            ]
+        },
+        "音符盒": {
+            "desc": "note_block",
+            "recipes": [
+                {
+                    "outputQty": 1,
+                    "红石粉": 1,
+                    "木板": 8
+                }
+            ]
+        },
+        "堆肥桶": {
+            "desc": "composter",
+            "recipes": [
+                {
+                    "outputQty": 1,
+                    "木制台阶": 7
+                }
+            ]
+        },
+        "炼药锅": {
+            "desc": "cauldron",
+            "recipes": [
+                {
+                    "outputQty": 1,
+                    "铁锭": 7
+                }
+            ]
+        },
+        "铁轨": {
+            "desc": "rail",
+            "recipes": [
+                {
+                    "outputQty": 16,
+                    "木棍": 1,
+                    "铁锭": 6
+                }
+            ]
+        },
+        "动力铁轨": {
+            "desc": "powered_rail",
+            "recipes": [
+                {
+                    "outputQty": 6,
+                    "红石粉": 1,
+                    "木棍": 1,
+                    "金锭": 6
+                }
+            ]
+        },
+        "探测铁轨": {
+            "desc": "detector_rail",
+            "recipes": [
+                {
+                    "outputQty": 6,
+                    "红石粉": 1,
+                    "石头压力板": 1,
+                    "铁锭": 6
+                }
+            ]
+        },
+        "激活铁轨": {
+            "desc": "activator_rail",
+            "recipes": [
+                {
+                    "outputQty": 6,
+                    "红石火把": 1,
+                    "木棍": 2,
+                    "铁锭": 6
+                }
+            ]
+        },
+        "矿车": {
+            "desc": "minecart",
+            "recipes": [
+                {
+                    "outputQty": 1,
+                    "铁锭": 5
+                }
+            ]
+        },
+        "漏斗矿车": {
+            "desc": "hopper_minecart",
+            "recipes": [
+                {
+                    "outputQty": 1,
+                    "漏斗": 1,
+                    "矿车": 1
+                }
+            ]
+        },
+        "运输矿车": {
+            "desc": "chest_minecart",
+            "recipes": [
+                {
+                    "outputQty": 1,
+                    "箱子": 1,
+                    "矿车": 1
+                }
+            ]
+        },
+        "动力矿车": {
+            "desc": "furnace_minecart",
+            "recipes": [
+                {
+                    "outputQty": 1,
+                    "熔炉": 1,
+                    "矿车": 1
+                }
+            ]
+        },
+        "TNT矿车": {
+            "desc": "tnt_minecart",
+            "recipes": [
+                {
+                    "outputQty": 1,
+                    "TNT": 1,
+                    "矿车": 1
+                }
+            ]
+        },
+        "木运输船": {
+            "desc": "chest_boat",
+            "recipes": [
+                {
+                    "outputQty": 1,
+                    "箱子": 1,
+                    "木船": 1
+                }
+            ]
+        },
+        "运输竹筏": {
+            "desc": "chest_raft",
+            "recipes": [
+                {
+                    "outputQty": 1,
+                    "箱子": 1,
+                    "竹筏": 1
+                }
+            ]
+        },
+        "门": {
+            "desc": "door",
+            "recipes": [
+                {
+                    "outputQty": 3,
+                    "木板": 6
+                }
+            ]
+        },
+        "铁门": {
+            "desc": "iron_door",
+            "recipes": [
+                {
+                    "outputQty": 3,
+                    "铁锭": 6
+                }
+            ]
+        },
+        "栅栏门": {
+            "desc": "fence_gate",
+            "recipes": [
+                {
+                    "outputQty": 1,
+                    "木棍": 4,
+                    "木板": 2
+                }
+            ]
+        },
+        "活板门": {
+            "desc": "trapdoor",
+            "recipes": [
+                {
+                    "outputQty": 2,
+                    "木板": 6
+                }
+            ]
+        },
+        "铁活板门": {
+            "desc": "iron_trapdoor",
+            "recipes": [
+                {
+                    "outputQty": 1,
+                    "铁锭": 4
+                }
+            ]
+        },
+        "TNT": {
+            "desc": "tnt",
+            "recipes": [
+                {
+                    "outputQty": 1,
+                    "火药": 5,
+                    "沙子": 4
+                }
+            ]
+        },
+        "红石灯": {
+            "desc": "redstone_lamp",
+            "recipes": [
+                {
+                    "outputQty": 1,
+                    "红石粉": 4,
+                    "荧石": 1
+                }
+            ]
+        },
+        "盔甲架": {
+            "desc": "armor_stand",
+            "recipes": [
+                {
+                    "outputQty": 1,
+                    "木棍": 6,
+                    "平滑石台阶": 1
+                }
+            ]
+        },
+        "木板": {
+            "desc": "planks",
+            "recipes": [
+                {
+                    "outputQty": 4,
+                    "原木": 1
+                }
+            ]
+        },
+        "下界合金锭": {
+            "desc": "netherite_ingot",
+            "recipe": [
+                {
+                    "下届合金块": 1,
+                    "outputQty": 9
+                },
+                {
+                    "金锭": 4,
+                    "下界合金碎片": 4,
+                    "outputQty": 1
+                }
+            ]
+        }
+    }
+}
