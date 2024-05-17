@@ -2,7 +2,7 @@
     "BuildingGroup": {
         "去皮橡木": {
             "desc": "stripped_oak_wood",
-            "recipes": [
+            "formula": [
                 {
                     "outputQty": 3,
                     "去皮橡木原木": 4
