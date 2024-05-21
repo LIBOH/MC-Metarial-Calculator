@@ -15,7 +15,6 @@ class Calculator:
         self.__block: Block | None = None
         self.__blockName: str = ''
         self.__blockQty: int = 0
-        self.__totalFormula = self.calcTotalFormula()
 
     def __output(self, outputType: str, _material: Material, stack_count: int, stack_num: int, ):
         match outputType:
@@ -75,7 +74,7 @@ class Calculator:
                 return
             self.__output('multical', _material, _stack_count, stack_num)
 
-        for i in self.__totalFormula:
+        for i in self.calcTotalFormula():
             for material in i:
                 stack_num = util_checkStackCount(material.name)
                 stack_count = material.count // stack_num
@@ -85,7 +84,7 @@ class Calculator:
                     multicalOutput(material, stack_num, stack_count)
 
     def calcInnerFormula(self):
-        for formulas in self.__totalFormula:
+        for formulas in self.calcTotalFormula():
             for material in formulas:
                 if util_isIgnore(material.name):
                     continue
@@ -116,25 +115,26 @@ class Calculator:
 def main(_calculator):
     print()
     while True:
-        print(Fore.LIGHTGREEN_EX, end='')
-        print('-' * 40)
-        block_name = input('要制作的方块名(输入q或Q退出)：')
-        if block_name in ['q', 'Q']:
-            exit(0)
-        if util_checkRegistered(block_name):
-            _calculator.blockName = block_name
-            break
+        while True:
+            print(Fore.LIGHTGREEN_EX, end='')
+            print('-' * 40)
+            block_name = input('要制作的方块名(输入q或Q退出)：')
+            if block_name in ['q', 'Q']:
+                exit(0)
+            if util_checkRegistered(block_name):
+                _calculator.blockName = block_name
+                print(_calculator.blockName)
+                break
 
-    while True:
-        block_qty = input('要制作的数量：')
-        if block_qty.isdigit():
-            _calculator.blockQty = int(block_qty)
-            break
-    _calculator.calcTotalToStacks()
-    _calculator.calcInnerFormula()
+        while True:
+            block_qty = input('要制作的数量：')
+            if block_qty.isdigit():
+                _calculator.blockQty = int(block_qty)
+                break
+        _calculator.calcTotalToStacks()
+        _calculator.calcInnerFormula()
 
 
 if __name__ == '__main__':
     calculator = Calculator()
-    while True:
-        main(calculator)
+    main(calculator)
