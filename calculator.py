@@ -27,7 +27,7 @@ class Calculator:
                       f'= {stack_count} x {stack_num} + {_material.count}>')
 
             case _:
-                print('Unknown Output Type!')
+                print(f'Unknown Output Type {outputType}!')
 
     def calcTotalFormula(self, block: Block = None, blockQty: int = 0):
         def singleOutput(f: dict):
