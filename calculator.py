@@ -16,22 +16,13 @@ class Calculator:
         self.__blockName: str = ''
         self.__blockQty: int = 0
 
-    def __getAmount(self, num: int):
-        return self.blockQty - num
-
-    def __output(self, outputType: str, _material: Material,
-                 stack_count: int, stack_num: int, *,
-                 amount: int = 0, ):
+    def __output(self, outputType: str, _material: Material, stack_count: int, stack_num: int, ):
         match outputType:
             case 'single':
                 print(f'<{_material.name}: {_material.count} '
                       f'= {stack_count} x {stack_num} + {_material.count - (stack_count * stack_num)}>')
 
             case 'multical':
-                if amount:
-                    print(f'<{_material.name}: {_material.count} '
-                          f'= {stack_count} x {stack_num} + {_material.count}> + {amount} 个{self.blockName}')
-                    return
                 print(f'<{_material.name}: {_material.count} '
                       f'= {stack_count} x {stack_num} + {_material.count}>')
 
@@ -79,8 +70,7 @@ class Calculator:
         def multicalOutput(_material: Material, _stack_num: int, _stack_count: int):
             material_total_count = _material.count * _material.outputCount
             if material_total_count < self.blockQty:
-                amount = self.__getAmount(material_total_count)
-                self.__output('multical', _material, _stack_count, stack_num, amount=amount)
+                self.__output('multical', _material, _stack_count, stack_num)
                 return
             self.__output('multical', _material, _stack_count, stack_num)
 
