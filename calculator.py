@@ -15,6 +15,7 @@ class Calculator:
         self.__block: Block | None = None
         self.__blockName: str = ''
         self.__blockQty: int = 0
+        self.__totalFormula = self.calcTotalFormula()
 
     def __output(self, outputType: str, _material: Material, stack_count: int, stack_num: int, ):
         match outputType:
@@ -74,7 +75,7 @@ class Calculator:
                 return
             self.__output('multical', _material, _stack_count, stack_num)
 
-        for i in self.calcTotalFormula():
+        for i in self.__totalFormula:
             for material in i:
                 stack_num = util_checkStackCount(material.name)
                 stack_count = material.count // stack_num
@@ -84,7 +85,7 @@ class Calculator:
                     multicalOutput(material, stack_num, stack_count)
 
     def calcInnerFormula(self):
-        for formulas in self.calcTotalFormula():
+        for formulas in self.__totalFormula:
             for material in formulas:
                 if util_isIgnore(material.name):
                     continue
