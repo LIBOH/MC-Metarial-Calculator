@@ -14,8 +14,6 @@ blocks_registry: dict = {}
 
 
 def __util_getRecipesBook(filePath: str):
-    data = []
-
     def getBlockGroup(groupPath):
         for k, v in groupPath.items():
             with open(v, 'r', encoding='utf-8') as f:
