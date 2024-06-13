@@ -1,5 +1,6 @@
 from decimal import Decimal, getcontext
 from collections import namedtuple
+from typing import Any, Generator
 
 from colorama import Fore
 
@@ -15,22 +16,35 @@ class Calculator:
         self.__block: Block | None = None
         self.__blockName: str = ''
         self.__blockQty: int = 0
+        self.__maxTextLength = 0
+        self.__outputDatas = []
 
-    def __output(self, outputType: str, _material: Material, stack_count: int, stack_num: int, ):
+    def __updateMaxTextLength(self, text: str) -> None:
+        self.__maxTextLength = max(self.__maxTextLength, len(text))
+
+    def __output(self):
+        for i in self.__outputDatas:
+            print(i)
+        self.__outputDatas.clear()
+        pass
+
+    def __outputFormater(self, outputType: str, _material: Material, stack_count: int, stack_num: int):
+        head = f'<{_material.name}:'
+        head_formated = f'{head:\u3000<{self.__maxTextLength}}'
         match outputType:
             case 'single':
-                print(f'<{_material.name}: {_material.count} '
-                      f'= {stack_count} x {stack_num} + {_material.count - (stack_count * stack_num)}>')
+                data = f'{_material.count} = {stack_count} x {stack_num} + {_material.count - (stack_count * stack_num)}>'
+                self.__outputDatas.append(f'{head_formated} {data}')
 
             case 'multical':
-                print(f'<{_material.name}: {_material.count} '
-                      f'= {stack_count} x {stack_num} + {_material.count}>')
+                data = f'{_material.count} = {stack_count} x {stack_num} + {_material.count}>'
+                self.__outputDatas.append(f'{head_formated} {data}')
 
             case _:
                 print(f'Unknown Output Type {outputType}!')
 
-    def calcTotalFormula(self, block: Block = None, blockQty: int = 0):
-        def singleOutput(f: dict):
+    def calcTotalFormula(self, block: Block = None, blockQty: int = 0) -> Generator[list[Material], Any, None]:
+        def singleOutput(f: dict) -> list[Material]:
             outputQty = 0
             single_result = []
             for k, v in f.items():
@@ -41,7 +55,7 @@ class Calculator:
                 single_result.append(Material(k, blockQty if blockQty else self.blockQty * v, outputQty))
             return single_result
 
-        def multicalOutput(f: dict):
+        def multicalOutput(f: dict) -> list[Material]:
             count = 0
             outputQty = 0
             multical_result = []
@@ -65,23 +79,30 @@ class Calculator:
         print(f'制作{self.blockQty}个{self.blockName}需要:')
 
         def singleOutput(_material: Material, _stack_num: int, _stack_count: int):
-            self.__output('single', material, _stack_count, stack_num)
+            self.__outputFormater('single', _material, _stack_count, _stack_num)
 
         def multicalOutput(_material: Material, _stack_num: int, _stack_count: int):
             material_total_count = _material.count * _material.outputCount
             if material_total_count < self.blockQty:
-                self.__output('multical', _material, _stack_count, stack_num)
+                self.__outputFormater('multical', _material, _stack_count, _stack_num)
                 return
-            self.__output('multical', _material, _stack_count, stack_num)
+            self.__outputFormater('multical', _material, _stack_count, _stack_num)
 
+        alist = []
         for i in self.calcTotalFormula():
             for material in i:
-                stack_num = util_checkStackCount(material.name)
-                stack_count = material.count // stack_num
-                if material.outputCount == 1:
-                    singleOutput(material, stack_num, stack_count)
-                else:
-                    multicalOutput(material, stack_num, stack_count)
+                self.__updateMaxTextLength(f'<{material.name}:')
+                alist.append(material)
+    
+        for material in alist:
+            stack_num = util_checkStackCount(material.name)
+            stack_count = material.count // stack_num
+            if material.outputCount == 1:
+                singleOutput(material, stack_num, stack_count)
+            else:
+                multicalOutput(material, stack_num, stack_count)
+
+        self.__output()
 
     def calcInnerFormula(self):
         for formulas in self.calcTotalFormula():
@@ -123,7 +144,6 @@ def main(_calculator):
                 exit(0)
             if util_checkRegistered(block_name):
                 _calculator.blockName = block_name
-                print(_calculator.blockName)
                 break
 
         while True:
