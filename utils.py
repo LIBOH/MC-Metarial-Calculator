@@ -15,7 +15,7 @@ blocks_registry: dict = {}
 
 def __util_getRecipesBook(filePath: str):
     def getBlockGroup(groupPath):
-        for k, v in groupPath.items():
+        for v in groupPath.value():
             with open(v, 'r', encoding='utf-8') as f:
                 formula_data.update(json.load(f))
 
