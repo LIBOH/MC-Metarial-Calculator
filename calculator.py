@@ -28,16 +28,16 @@ class Calculator:
         self.__outputDatas.clear()
         pass
 
-    def __outputFormater(self, outputType: str, _material: Material, stack_count: int, stack_num: int):
+    def __outputFormater(self, outputType: str, _material: Material, stackCount: int, stackNum: int):
         head = f'<{_material.name}:'
         head_formated = f'{head:\u3000<{self.__maxTextLength}}'
         match outputType:
             case 'single':
-                data = f'{_material.count} = {stack_count} x {stack_num} + {_material.count - (stack_count * stack_num)}>'
+                data = f'{_material.count} = {stackCount} x {stackNum} + {_material.count - (stackCount * stackNum)}>'
                 self.__outputDatas.append(f'{head_formated} {data}')
 
             case 'multical':
-                data = f'{_material.count} = {stack_count} x {stack_num} + {_material.count}>'
+                data = f'{_material.count} = {stackCount} x {stackNum} + {_material.count}>'
                 self.__outputDatas.append(f'{head_formated} {data}')
 
             case _:
@@ -134,12 +134,11 @@ class Calculator:
 
 
 def main(_calculator):
-    print()
     while True:
         while True:
             print(Fore.LIGHTGREEN_EX, end='')
             print('-' * 40)
-            block_name = input('要制作的方块名(输入q或Q退出)：')
+            block_name = input('要制作的方块名(输入q或Q退出): ')
             if block_name in ['q', 'Q']:
                 exit(0)
             if util_checkRegistered(block_name):
